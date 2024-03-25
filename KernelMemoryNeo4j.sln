@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{29A3C52F-43A2-48B9-9B22-0A2E03EDEC14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4jMemoryStorage", "src\Neo4jMemoryStorage\Neo4jMemoryStorage.csproj", "{FE85D8E8-3E32-48DD-B353-367624354310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6ED29EFA-DD66-42F3-8C2F-3B4774A106E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{B9351C38-238C-43E3-8663-261BF5B434DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE85D8E8-3E32-48DD-B353-367624354310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE85D8E8-3E32-48DD-B353-367624354310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE85D8E8-3E32-48DD-B353-367624354310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE85D8E8-3E32-48DD-B353-367624354310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9351C38-238C-43E3-8663-261BF5B434DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9351C38-238C-43E3-8663-261BF5B434DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9351C38-238C-43E3-8663-261BF5B434DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9351C38-238C-43E3-8663-261BF5B434DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE85D8E8-3E32-48DD-B353-367624354310} = {29A3C52F-43A2-48B9-9B22-0A2E03EDEC14}
+		{B9351C38-238C-43E3-8663-261BF5B434DB} = {6ED29EFA-DD66-42F3-8C2F-3B4774A106E0}
+	EndGlobalSection
+EndGlobal

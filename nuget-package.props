@@ -1,0 +1,52 @@
+﻿<Project>
+    <PropertyGroup>
+        <!-- Central version prefix - applies to all nuget packages. -->
+        <Version>0.9.5</Version>
+
+        <!-- Default description and tags. Packages can override. -->
+        <Authors>Andreas Kollegger and Grant Lodge</Authors>
+        <Copyright>Neo4j, Inc.</Copyright>
+        <Company>Neo4j</Company>
+        <Product>Kernel Memory adapter for Neo4j</Product>
+        <Description>Neo4j connector for Microsoft Kernel Memory, to store and search memory using Neo4j vector indexing and Neo4j features.</Description>
+        <PackageTags>Copilot, Memory, RAG, Kernel Memory, Neo4j, AI, Artificial Intelligence, Embeddings, Vector DB, Vector Search, ETL</PackageTags>
+        <PackageId>$(AssemblyName)</PackageId>
+
+        <!-- Required license, copyright, and repo information. Packages can override. -->
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Copyright>© Neo4j, Inc. All rights reserved.</Copyright>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+        <!-- Use icon and NUGET readme from dotnet/nuget folder -->
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageIconUrl>icon.png</PackageIconUrl>
+        <PackageReadmeFile>NUGET.md</PackageReadmeFile>
+
+        <!-- Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <!-- Include the XML documentation file in the NuGet package. -->
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- SourceLink allows step-through debugging for source hosted on GitHub. -->
+        <!-- https://github.com/dotnet/sourcelink -->
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Include icon.png and NUGET.md in the project. -->
+        <None Include="$(RepoRoot)/icon.png" Link="icon.png" Pack="true" PackagePath="." Visible="false"/>
+        <None Include="$(RepoRoot)/NUGET.md" Link="NUGET.md" Pack="true" PackagePath="." Visible="false"/>
+    </ItemGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
+</Project>

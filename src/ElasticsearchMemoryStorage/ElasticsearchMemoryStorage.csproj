@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RollForward>LatestMajor</RollForward>
+        <AssemblyName>FreeMindLabs.KernelMemory.Elasticsearch</AssemblyName>
+        <RootNamespace>FreeMindLabs.KernelMemory.Elasticsearch</RootNamespace>
+        <IsPackable>true</IsPackable>
+        <PackageId>FreeMindLabs.KernelMemory.Elasticsearch</PackageId>
+        <NoWarn>CA1724,NU5104,CA1304,CA1311,IDE0130</NoWarn>
+        <UserSecretsId>750ea0f7-073f-44fb-b791-08ce5fd978a2</UserSecretsId>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DebugType>portable</DebugType>
+        <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    </PropertyGroup>
+
+    <Import Project="../../nuget-package.props" />
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.KernelMemory.Abstractions" />
+        <PackageReference Include="Elastic.Clients.Elasticsearch" />
+    </ItemGroup>
+
+    <Import Project="../../code-analysis.props" />
+
+</Project>
