@@ -33,7 +33,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Neo4jMemoryStorage\Neo4jMemoryStorage.csproj" />
-        <PackageReference Include="Neo4j.Driver" />
+        <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.35.240321.1" />
+        <PackageReference Include="Neo4j.Driver" Version="5.18.1" />
     </ItemGroup>
     
     <ItemGroup>
