@@ -1,23 +1,21 @@
-﻿
+﻿using Microsoft.KernelMemory.MemoryStorage;
 using Neo4j.KernelMemory.MemoryStorage;
-using Neo4j.Driver;
-using Microsoft.KernelMemory.MemoryStorage;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
+// ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// Extensions for KernelMemoryBuilder and generic DI
+///     Extensions for KernelMemoryBuilder and generic DI
 /// </summary>
-public static partial class ServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Inject Neo4j as the default implementation of IMemoryDb
+    ///     Inject Neo4j as the default implementation of IMemoryDb
     /// </summary>
-    public static IServiceCollection AddNeo4jAsVectorDb(this IServiceCollection services,
-        Neo4jConfig neo4jConfig)
+    public static IServiceCollection AddNeo4jAsVectorDb(this IServiceCollection services, Neo4jConfig neo4jConfig)
     {
-        ArgumentNullException.ThrowIfNull(neo4jConfig, nameof(neo4jConfig));
+        ArgumentNullException.ThrowIfNull(neo4jConfig);
 
         services.AddSingleton(sp =>
         {
@@ -29,5 +27,4 @@ public static partial class ServiceCollectionExtensions
             .AddSingleton(neo4jConfig)
             .AddSingleton<IMemoryDb, Neo4jMemory>();
     }
-
 }
