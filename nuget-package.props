@@ -4,7 +4,7 @@
         <Version>0.9.5</Version>
 
         <!-- Default description and tags. Packages can override. -->
-        <Authors>Andreas Kollegger and Grant Lodge</Authors>
+        <Authors>Andreas Kollegger</Authors>
         <Copyright>Neo4j, Inc.</Copyright>
         <Company>Neo4j</Company>
         <Product>Kernel Memory adapter for Neo4j</Product>
