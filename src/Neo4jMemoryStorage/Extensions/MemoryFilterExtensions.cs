@@ -1,23 +1,21 @@
 ﻿// Copyright (c) Free Mind Labs, Inc. All rights reserved.
 
+// ReSharper disable once CheckNamespace
 namespace Microsoft.KernelMemory;
 
 /// <summary>
-/// Extensions methods for MemoryFilter.
+///     Extensions methods for MemoryFilter.
 /// </summary>
 public static class MemoryFilterExtensions
 {
     /// <summary>
-    /// Displays the MemoryFilter in a human-readable format.
+    ///     Displays the MemoryFilter in a human-readable format.
     /// </summary>
     /// <param name="filter"></param>
     /// <returns></returns>
     public static string ToDebugString(this MemoryFilter? filter)
     {
-        if (filter == null)
-        {
-            return string.Empty;
-        }
+        if (filter == null) return string.Empty;
 
         // Prints all the tags in the record
         var tags = filter.Select(x => $"({x.Key}={string.Join("|", x.Value)})");
@@ -25,16 +23,13 @@ public static class MemoryFilterExtensions
     }
 
     /// <summary>
-    /// Displays the MemoryFilter(s) in a human-readable format.
+    ///     Displays the MemoryFilter(s) in a human-readable format.
     /// </summary>
     /// <param name="filters"></param>
     /// <returns></returns>
     public static string ToDebugString(this IEnumerable<MemoryFilter?>? filters)
     {
-        if (filters == null)
-        {
-            return string.Empty;
-        }
+        if (filters == null) return string.Empty;
 
         // Prints all the tags in the record
         var tags = filters.Select(x => x.ToDebugString());

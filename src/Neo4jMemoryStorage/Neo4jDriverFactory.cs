@@ -17,37 +17,37 @@ internal sealed class Neo4jDriverFactory
 
     private sealed class Logger : Neo4jLogger
     {
-        private readonly ILogger logger;
+        private readonly ILogger _logger;
 
         public Logger(ILogger logger)
         {
-            this.logger = logger;
+            _logger = logger;
         }
 
-        public void Error(Exception cause, string message, params object[] args)
+        public void Error(Exception? cause, string message, params object[] args)
         {
             if (cause != null)
-                this.logger.Log(LogLevel.Error, cause, message, args);
+                _logger.Log(LogLevel.Error, cause, message, args);
             else
-                this.logger.Log(LogLevel.Error, message, args);
+                _logger.Log(LogLevel.Error, message, args);
         }
 
-        public void Warn(Exception cause, string message, params object[] args)
+        public void Warn(Exception? cause, string message, params object[] args)
         {
             if (cause != null)
-                this.logger.Log(LogLevel.Warning, cause, message, args);
+                _logger.Log(LogLevel.Warning, cause, message, args);
             else
-                this.logger.Log(LogLevel.Warning, message, args);
+                _logger.Log(LogLevel.Warning, message, args);
         }
 
         public void Info(string message, params object[] args)
         {
-            this.logger.Log(LogLevel.Information, message, args);
+            _logger.Log(LogLevel.Information, message, args);
         }
 
         public void Debug(string message, params object[] args)
         {
-            this.logger.Log(LogLevel.Debug, message, args);
+            _logger.Log(LogLevel.Debug, message, args);
         }
 
         public void Trace(string message, params object[] args)
@@ -55,7 +55,14 @@ internal sealed class Neo4jDriverFactory
             // NoOp
         }
 
-        public bool IsTraceEnabled() => false;
-        public bool IsDebugEnabled() => true;
+        public bool IsTraceEnabled()
+        {
+            return false;
+        }
+
+        public bool IsDebugEnabled()
+        {
+            return true;
+        }
     }
 }
