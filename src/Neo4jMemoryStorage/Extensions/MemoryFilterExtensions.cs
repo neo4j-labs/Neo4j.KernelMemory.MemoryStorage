@@ -1,6 +1,4 @@
-﻿// Copyright (c) Free Mind Labs, Inc. All rights reserved.
-
-// ReSharper disable once CheckNamespace
+﻿// ReSharper disable once CheckNamespace
 namespace Microsoft.KernelMemory;
 
 /// <summary>
